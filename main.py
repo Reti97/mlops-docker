@@ -5,10 +5,8 @@ from pytorch_lightning import Trainer, seed_everything
 from glue_module import GLUEDataModule, GLUETransformer
 
 def main(args):
-    # Set random seed for reproducibility
     seed_everything(42)
 
-    # Initialize LightningDataModule
     data_module = GLUEDataModule(
         model_name_or_path=args.model_name_or_path,
         task_name=args.task_name,
@@ -17,7 +15,6 @@ def main(args):
         eval_batch_size=args.eval_batch_size
     )
 
-    # Initialize LightningModule
     model = GLUETransformer(
         model_name_or_path=args.model_name_or_path,
         num_labels=data_module.num_labels,
@@ -31,15 +28,12 @@ def main(args):
         #eval_splits=data_module.eval_splits
     )
 
-    # Set up Trainer
     trainer = Trainer(
         default_root_dir=args.checkpoint_dir,
         gpus=1 if torch.cuda.is_available() else 0,
         max_epochs=args.max_epochs,
         #progress_bar_refresh_rate=1,
     )
-
-    # Train the model
     trainer.fit(model, data_module)
 
 if __name__ == "__main__":

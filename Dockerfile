@@ -1,4 +1,3 @@
-# Use an official Python runtime as a base image
 FROM continuumio/miniconda3:latest
 
 WORKDIR /app
