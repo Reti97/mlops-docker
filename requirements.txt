@@ -1,0 +1,8 @@
+torch
+transformers
+pytorch_lightning==1.9.5
+datasets
+argparse
+datetime
+scikit-learn
+scipy
