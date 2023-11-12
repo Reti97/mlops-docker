@@ -1,5 +1,8 @@
 # Train distilbert-base-uncased from Docker
 
+This repository contains all the files needed to train a [distilbert-base-uncased](https://huggingface.co/distilbert-base-uncased) Model. To install the needed dependencies, you can use [Docker](https://www.docker.com/).
+
+
 ## Get files
 Pull this repository to get all necessary Files.<br>
 <code>git clone https://github.com/Reti97/mlops-docker destination-folder</code>
