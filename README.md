@@ -15,7 +15,7 @@ Get the dockerfile with the following command from the docker hub:
 
 ### Run Training for 3 Epochs
 Then you can train the Model with the best parameters found in Project 1:
-<code>docker run -v Path/to/your/file/main.py:/code dockerimage python main.py --model_name_or_path distilbert-base-uncased --learning_rate 0.00011633938221625261 --adam_epsilon 6.73493036944769e-08 --warmup_steps 23</code>
+<code>docker run -v Path/to/your/file/main.py:/code dockerimage python main.py --learning_rate 0.00011633938221625261 --adam_epsilon 6.73493036944769e-08 --warmup_steps 23</code>
 
 ### Build Dockerfile
 

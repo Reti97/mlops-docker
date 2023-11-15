@@ -3,6 +3,7 @@ import torch
 from pytorch_lightning import Trainer, seed_everything
 from glue_module import GLUEDataModule, GLUETransformer
 import argparse
+
 def main(args):
     seed_everything(42)
 
@@ -35,9 +36,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train GLUE Transformer model.")
-    parser.add_argument("--learning_rate", type=float, default=2e-5)
-    parser.add_argument("--adam_epsilon", type=float, default=1e-8)
-    parser.add_argument("--warmup_steps", type=int, default=0)
+    parser.add_argument("--learning_rate", type=float, default=0.00011633938221625261)
+    parser.add_argument("--adam_epsilon", type=float, default=6.73493036944769e-08)
+    parser.add_argument("--warmup_steps", type=int, default=23)
+    parser.add_argument("--checkpoint_dir", type=str, default="models")
 
     args = parser.parse_args()
     main(args)
